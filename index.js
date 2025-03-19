@@ -28,7 +28,7 @@ app.put("/put", (req, res) => {
 app.delete("/delete", (req, res) => {
     const { email } = req.body;
     
-    const user = users.find(u => u.email === email);
+    const user = users.filter(u => u.email === email);
     
     if (!user) {
         return res.json({ error: "Email not found" });
